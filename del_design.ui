@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Add_database</class>
- <widget class="QMainWindow" name="Add_database">
+ <class>Remove_database</class>
+ <widget class="QMainWindow" name="Remove_database">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Добавление данных</string>
+   <string>Удаление данных</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTableWidget" name="tableWidget">
