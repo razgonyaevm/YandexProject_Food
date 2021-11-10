@@ -32,7 +32,7 @@ class Ui_Hello_Window(object):
         self.label_2.setFont(font)
         self.label_2.setObjectName("label_2")
         self.verticalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(190, 150, 234, 92))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(170, 150, 271, 92))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
