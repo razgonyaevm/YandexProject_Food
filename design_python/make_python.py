@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Make_an_order(object):
     def setupUi(self, Make_an_order):
         Make_an_order.setObjectName("Make_an_order")
-        Make_an_order.resize(800, 727)
+        Make_an_order.resize(800, 743)
         self.centralwidget = QtWidgets.QWidget(Make_an_order)
         self.centralwidget.setObjectName("centralwidget")
         self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
@@ -30,10 +30,10 @@ class Ui_Make_an_order(object):
         self.make_button.setFont(font)
         self.make_button.setObjectName("make_button")
         self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
-        self.textEdit.setGeometry(QtCore.QRect(30, 410, 351, 271))
+        self.textEdit.setGeometry(QtCore.QRect(30, 420, 351, 271))
         self.textEdit.setObjectName("textEdit")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(30, 370, 60, 16))
+        self.label.setGeometry(QtCore.QRect(30, 390, 60, 16))
         font = QtGui.QFont()
         font.setFamily("Times")
         font.setPointSize(18)
