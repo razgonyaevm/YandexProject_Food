@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Удаление данных</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
@@ -23,32 +26,41 @@
       <height>391</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
    </widget>
-   <widget class="QWidget" name="verticalLayoutWidget">
+   <widget class="QPushButton" name="update_button">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>30</x>
       <y>430</y>
-      <width>591</width>
-      <height>101</height>
+      <width>71</width>
+      <height>71</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QPushButton" name="del_button">
-       <property name="text">
-        <string>Удалить</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="exit_button">
-       <property name="text">
-        <string>Выйти</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 50px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../images/update_icon.png</normaloff>../images/update_icon.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>70</width>
+      <height>70</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
