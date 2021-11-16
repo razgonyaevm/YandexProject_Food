@@ -73,5 +73,7 @@ class Ui_Add_database(object):
         Add_database.setWindowTitle(_translate("Add_database", "Добавление данных"))
         self.add_button.setText(_translate("Add_database", "Добавить данные"))
         self.exit_button.setText(_translate("Add_database", "Выйти"))
-        self.label.setText(_translate("Add_database", "Укажите пожалуйста блюдо, которое вы хотите добавить в виде категория блюда (завтрак, обед...) и название блюда"))
+        self.label.setText(_translate("Add_database", "Укажите пожалуйста блюдо, которое вы хотите добавить в виде "
+                                                      "категория блюда (завтрак, обед...) и название блюда через "
+                                                      "пробел"))
         self.lineEdit.setText(_translate("Add_database", "Впишите сюда..."))

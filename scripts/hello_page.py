@@ -3,12 +3,9 @@ import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication
 from PyQt5.QtGui import QIcon
 from design_python.hello_python import Ui_Hello_Window
-from design_python.del_python import Ui_Remove_database
-from design_python.add_python import Ui_Add_database
-from design_python.make_python import Ui_Make_an_order
-from design_python.change_python import Ui_Change_database
 from scripts.make_order_script import Order
 from scripts.remove_script import Remove
+from scripts.add_script import Add
 
 
 class Hello(QMainWindow, Ui_Hello_Window):
@@ -18,16 +15,20 @@ class Hello(QMainWindow, Ui_Hello_Window):
         self.exit_button.clicked.connect(self.exit)
         self.make_order.clicked.connect(self.make)
         self.remove.clicked.connect(self.rem)
+        self.add.clicked.connect(self.ad)
         try:
-            # Включите в блок try/except, если вы также нацелены на Mac/Linux
-            from PyQt5.QtWinExtras import QtWin  # !!!
-            myappid = 'mycompany.myproduct.subproduct.version'  # !!!
-            QtWin.setCurrentProcessExplicitAppUserModelID(myappid)  # !!!
+            from PyQt5.QtWinExtras import QtWin
+            myappid = 'mycompany.myproduct.subproduct.version'
+            QtWin.setCurrentProcessExplicitAppUserModelID(myappid)
         except ImportError:
             pass
 
     def exit(self):
         self.close()
+
+    def ad(self):
+        self.close()
+        self.d = Add()
 
     def make(self):
         self.close()

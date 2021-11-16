@@ -26,6 +26,7 @@ class Order(QMainWindow, Ui_Make_an_order):
 
         self.tableWidget.itemChanged.connect(self.item_changed)
 
+        self.exit_button.clicked.connect(self.ex)
         self.make_button.clicked.connect(self.save_results)
 
     def save_results(self):
@@ -54,3 +55,6 @@ class Order(QMainWindow, Ui_Make_an_order):
 
     def item_changed(self, item):
         self.modified[self.titles[item.column()], item.row() + 1] = item.text()
+
+    def ex(self):
+        self.close()
