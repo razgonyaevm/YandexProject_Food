@@ -39,6 +39,8 @@ class Remove(QMainWindow, Ui_Remove_database):
                 '?' * len(ids)) + ")", ids)
             cur.execute("DELETE FROM Ordering WHERE id IN (" + ", ".join(
                 '?' * len(ids)) + ")", ids)
+            cur.execute("DELETE FROM Recipy WHERE id IN (" + ", ".join(
+                '?' * len(ids)) + ")", ids)
             self.con.commit()
 
     def upd(self):

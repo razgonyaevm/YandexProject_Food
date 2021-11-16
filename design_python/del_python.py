@@ -72,3 +72,6 @@ class Ui_Remove_database(object):
     def retranslateUi(self, Remove_database):
         _translate = QtCore.QCoreApplication.translate
         Remove_database.setWindowTitle(_translate("Remove_database", "Удаление данных"))
+        self.update_button.setToolTip(_translate("Remove_database", "Обновить"))
+        self.delete_button.setToolTip(_translate("Remove_database", "Удалить"))
+        self.exit_button.setToolTip(_translate("Remove_database", "Выход"))
