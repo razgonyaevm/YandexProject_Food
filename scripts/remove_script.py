@@ -38,4 +38,3 @@ class Remove(QMainWindow, Ui_Remove_database):
 
     def cl(self):
         self.close()
-
