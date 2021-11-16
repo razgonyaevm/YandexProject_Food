@@ -103,6 +103,15 @@
       <height>71</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>Выход</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 50px</string>
+    </property>
     <property name="text">
      <string/>
     </property>

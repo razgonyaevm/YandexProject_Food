@@ -49,6 +49,8 @@ class Ui_Make_an_order(object):
         self.label_2.setObjectName("label_2")
         self.exit_button = QtWidgets.QPushButton(self.centralwidget)
         self.exit_button.setGeometry(QtCore.QRect(680, 590, 71, 71))
+        self.exit_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.exit_button.setStyleSheet("border-radius: 50px")
         self.exit_button.setText("")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("../images/exit_icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -74,3 +76,4 @@ class Ui_Make_an_order(object):
         self.make_button.setText(_translate("Make_an_order", "Заказать"))
         self.label.setText(_translate("Make_an_order", "Итог:"))
         self.label_2.setText(_translate("Make_an_order", "Ваш заказ будет записан в файл order.txt"))
+        self.exit_button.setToolTip(_translate("Make_an_order", "Выход"))
