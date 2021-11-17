@@ -67,21 +67,21 @@
      <item>
       <widget class="QPushButton" name="change">
        <property name="text">
-        <string>Изменить элементы базы данных</string>
+        <string>Изменить рецепт</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="remove">
        <property name="text">
-        <string>Удалить элементы из базы данных</string>
+        <string>Удалить из меню</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="add">
        <property name="text">
-        <string>Добавить элементы в базу данных</string>
+        <string>Дополнить меню</string>
        </property>
       </widget>
      </item>

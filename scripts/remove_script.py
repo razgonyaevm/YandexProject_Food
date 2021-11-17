@@ -20,7 +20,7 @@ class Remove(QMainWindow, Ui_Remove_database):
         rows = list(set([i.row() for i in self.tableWidget.selectedItems()]))
         ids = [self.tableWidget.item(i, 0).text() for i in rows]
         valid = QMessageBox.question(
-            self, '', "Действительно удалить элементы с id " + ",".join(ids) + '?',
+            self, '', "Действительно удалить элементы?",
             QMessageBox.Yes, QMessageBox.No)
         if valid == QMessageBox.Yes:
             with open('../other_files/id.txt') as file:

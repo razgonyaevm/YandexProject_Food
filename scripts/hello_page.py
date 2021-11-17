@@ -6,6 +6,7 @@ from design_python.hello_python import Ui_Hello_Window
 from scripts.make_order_script import Order
 from scripts.remove_script import Remove
 from scripts.add_script import Add
+from scripts.change_script import Change
 
 
 class Hello(QMainWindow, Ui_Hello_Window):
@@ -16,6 +17,7 @@ class Hello(QMainWindow, Ui_Hello_Window):
         self.make_order.clicked.connect(self.make)
         self.remove.clicked.connect(self.rem)
         self.add.clicked.connect(self.ad)
+        self.change.clicked.connect(self.chan)
         try:
             from PyQt5.QtWinExtras import QtWin
             myappid = 'mycompany.myproduct.subproduct.version'
@@ -37,6 +39,10 @@ class Hello(QMainWindow, Ui_Hello_Window):
     def rem(self):
         self.close()
         self.rm = Remove()
+
+    def chan(self):
+        self.close()
+        self.ch = Change()
 
 
 if __name__ == '__main__':
