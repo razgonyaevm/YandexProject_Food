@@ -10,6 +10,7 @@ class Change(QMainWindow, Ui_Change_database):
         self.setupUi(self)
 
         self.con = sqlite3.connect('../other_files/Pirgoroy.db')
+        self.con.row_factory = sqlite3.Row
         self.update()
 
         self.show()

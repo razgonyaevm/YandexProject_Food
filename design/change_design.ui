@@ -23,6 +23,216 @@
       <height>391</height>
      </rect>
     </property>
+    <column>
+     <property name="text">
+      <string>id</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Название блюда</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Бананы, гр</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Ветчина, гр</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Горошек зеленый консервированный, уп (200гр)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Зелень укропа или петрушки, уп (150гр)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Кабачок, гр</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Капуста белокочанная, гр</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Картофель, гр</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Колбаса копченая, гр</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Крупа гречневая, уп (500гр)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Крупа манная, уп (500гр)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Крупа перловая, уп (500гр)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Крупа рисовая, уп (500гр)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Кукуруза консервированная, уп (200гр)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Лимон, гр</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Лук репчатый, гр</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Майонез, уп (200мл)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Макаронные изделия, уп (450гр)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Масло оливковое, уп (500мл)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Масло растительное, уп (1000мл)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Масло сливочное, уп (200гр)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Молоко, уп (500мл)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Морковь, гр</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Мука пшеничная, уп (500гр)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Мясо (свинина, говядина, курица), гр</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Овсяные хлопья, уп (500гр)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Огурцы свежие, гр</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Огурцы соленые, гр</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Оливки консервированные, уп (200гр)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Перец болгарский, гр</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Помидоры, гр</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Пшено, уп (500гр)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Рыба, гр</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Сахар, уп (500гр)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Свекла, гр</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Сметана, уп (250мл)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Сыр мягкий рассольный, уп (200гр)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Сыр твердый, гр</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Творог, уп (200гр)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Яблоки, гр</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Яйцо куриное, уп (10шт)</string>
+     </property>
+    </column>
    </widget>
    <widget class="QPushButton" name="save_button">
     <property name="geometry">

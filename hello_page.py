@@ -7,6 +7,7 @@ from scripts.make_order_script import Order
 from scripts.remove_script import Remove
 from scripts.add_script import Add
 from scripts.change_script import Change
+from scripts.itog_script import Itog
 
 
 class Hello(QMainWindow, Ui_Hello_Window):
@@ -18,6 +19,7 @@ class Hello(QMainWindow, Ui_Hello_Window):
         self.remove.clicked.connect(self.rem)
         self.add.clicked.connect(self.ad)
         self.change.clicked.connect(self.chan)
+        self.pushButton.clicked.connect(self.it)
         try:
             from PyQt5.QtWinExtras import QtWin
             myappid = 'mycompany.myproduct.subproduct.version'
@@ -29,20 +31,19 @@ class Hello(QMainWindow, Ui_Hello_Window):
         self.close()
 
     def ad(self):
-        self.close()
         self.d = Add()
 
     def make(self):
-        self.close()
         self.mk = Order()
 
     def rem(self):
-        self.close()
         self.rm = Remove()
 
     def chan(self):
-        self.close()
         self.ch = Change()
+
+    def it(self):
+        self.ito = Itog()
 
 
 if __name__ == '__main__':

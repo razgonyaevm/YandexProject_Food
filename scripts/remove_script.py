@@ -2,6 +2,7 @@ import sqlite3
 import os
 from PyQt5.QtWidgets import QMainWindow, QTableWidgetItem, QMessageBox
 from design_python.del_python import Ui_Remove_database
+from scripts.make_order_script import Order
 
 
 class Remove(QMainWindow, Ui_Remove_database):
@@ -42,6 +43,8 @@ class Remove(QMainWindow, Ui_Remove_database):
             cur.execute("DELETE FROM Recipy WHERE id IN (" + ", ".join(
                 '?' * len(ids)) + ")", ids)
             self.con.commit()
+            a = Order()
+            a.save_results()
 
     def upd(self):
         cur = self.con.cursor()

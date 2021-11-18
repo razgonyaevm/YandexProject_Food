@@ -113,6 +113,19 @@
      </item>
     </layout>
    </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>380</y>
+      <width>271</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Сформировать список покупок</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
