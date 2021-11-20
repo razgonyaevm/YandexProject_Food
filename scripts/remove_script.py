@@ -33,6 +33,7 @@ class Remove(QMainWindow, Ui_Remove_database):
                         break
 
             os.system(r' >../other_files/id.txt')
+            os.system(r' >../shopping_list.txt')
             with open('../other_files/id.txt', 'w') as file:
                 file.write(str(a))
             cur = self.con.cursor()
