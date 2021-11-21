@@ -10,8 +10,9 @@ class Order(QMainWindow, Ui_Make_an_order):
         super().__init__()
         self.setupUi(self)
 
-        self.con = sqlite3.connect('../other_files/Pirgoroy.db')
+        self.con = sqlite3.connect('../other_files/Pirgoroy.db')  # подключаем базу данных Pirgoroy
 
+        # запсь значений в таблицу в форме
         cur = self.con.cursor()
         result = cur.execute("SELECT * FROM Ordering").fetchall()
         self.tableWidget.setRowCount(len(result))
@@ -24,12 +25,15 @@ class Order(QMainWindow, Ui_Make_an_order):
 
         self.show()
 
+        # отслеживание изменений, которые внес пользователь
         self.tableWidget.itemChanged.connect(self.item_changed)
 
+        # отслеживание нажатий кнопок
         self.exit_button.clicked.connect(self.ex)
         self.make_button.clicked.connect(self.save_results)
 
     def save_results(self):
+        """функция для обновления таблицы Ordering и записи в файл order.txt"""
         if self.modified:
             cur = self.con.cursor()
             for i in self.modified.keys():
@@ -54,7 +58,9 @@ class Order(QMainWindow, Ui_Make_an_order):
         self.textEdit.setText(m)
 
     def item_changed(self, item):
+        """функция отслеживания обновлений таблицы"""
         self.modified[self.titles[item.column()], item.row() + 1] = item.text()
 
     def ex(self):
+        """функция выхода"""
         self.close()

@@ -14,13 +14,14 @@ class Hello(QMainWindow, Ui_Hello_Window):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        # отслеживаем нажатия кнопки
         self.exit_button.clicked.connect(self.exit)
         self.make_order.clicked.connect(self.make)
         self.remove.clicked.connect(self.rem)
         self.add.clicked.connect(self.ad)
         self.change.clicked.connect(self.chan)
         self.pushButton.clicked.connect(self.it)
-        try:
+        try:  # этот блок нужен для установки иконки приложения
             from PyQt5.QtWinExtras import QtWin
             myappid = 'mycompany.myproduct.subproduct.version'
             QtWin.setCurrentProcessExplicitAppUserModelID(myappid)
@@ -28,22 +29,22 @@ class Hello(QMainWindow, Ui_Hello_Window):
             pass
 
     def exit(self):
-        self.close()
+        self.close()  # закрывает приветственную форму
 
     def ad(self):
-        self.d = Add()
+        self.d = Add()  # открывает форму добавления элементов
 
     def make(self):
-        self.mk = Order()
+        self.mk = Order()  # открывает форму заказа
 
     def rem(self):
-        self.rm = Remove()
+        self.rm = Remove()  # открывает форму удаления элементов
 
     def chan(self):
-        self.ch = Change()
+        self.ch = Change()  # открывавет форму изменения базы данных
 
     def it(self):
-        self.ito = Itog()
+        self.ito = Itog()  # открывает форму итогового заполнения списка покупок
 
 
 if __name__ == '__main__':

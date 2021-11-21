@@ -9,19 +9,20 @@ class Change(QMainWindow, Ui_Change_database):
         super().__init__()
         self.setupUi(self)
 
-        self.con = sqlite3.connect('../other_files/Pirgoroy.db')
+        self.con = sqlite3.connect('../other_files/Pirgoroy.db')  # подключаем базу данных Pirgoroy
         self.con.row_factory = sqlite3.Row
         self.update()
 
         self.show()
+        # отслеживаем нажатия кнопок
         self.exit_button.clicked.connect(self.ex)
         self.tableWidget.itemChanged.connect(self.item_changed)
         self.save_button.clicked.connect(self.save)
 
     def ex(self):
-        self.close()
+        self.close()  # закрываем форму
 
-    def save(self):
+    def save(self):  # записываем изменения в таблицу Recipy
         valid = QMessageBox.question(
             self, '', "Дейтвительно сохранить?",
             QMessageBox.Yes, QMessageBox.No)
@@ -38,10 +39,10 @@ class Change(QMainWindow, Ui_Change_database):
                 self.modified.clear()
                 self.update()
 
-    def item_changed(self, item):
+    def item_changed(self, item):  # записываем изменения в self.modified
         self.modified[self.titles[item.column()], item.row() + 1] = item.text()
 
-    def update(self):
+    def update(self):  # обновляем таблицу в форме значениями из таблицы Recipy
         cur = self.con.cursor()
         result = cur.execute("SELECT * FROM Recipy").fetchall()
         self.tableWidget.setRowCount(len(result))

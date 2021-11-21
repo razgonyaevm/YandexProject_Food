@@ -9,15 +9,17 @@ class Remove(QMainWindow, Ui_Remove_database):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        self.con = sqlite3.connect('../other_files/Pirgoroy.db')
+        self.con = sqlite3.connect('../other_files/Pirgoroy.db')  #
         self.upd()
         self.show()
 
+        #
         self.update_button.clicked.connect(self.upd)
         self.delete_button.clicked.connect(self.remove)
         self.exit_button.clicked.connect(self.cl)
 
     def remove(self):
+        """функция для удаления элементов из таблиц Menu, Ordering, Recipy"""
         rows = list(set([i.row() for i in self.tableWidget.selectedItems()]))
         ids = [self.tableWidget.item(i, 0).text() for i in rows]
         valid = QMessageBox.question(
@@ -48,6 +50,7 @@ class Remove(QMainWindow, Ui_Remove_database):
             a.save_results()
 
     def upd(self):
+        """функция обновления таблицы в форме"""
         cur = self.con.cursor()
         result = cur.execute("SELECT * FROM Menu").fetchall()
         self.tableWidget.setRowCount(len(result))
@@ -57,4 +60,5 @@ class Remove(QMainWindow, Ui_Remove_database):
                 self.tableWidget.setItem(i, j, QTableWidgetItem(str(val)))
 
     def cl(self):
+        """функция закрытия"""
         self.close()

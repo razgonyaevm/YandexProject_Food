@@ -10,13 +10,14 @@ class Itog(QMainWindow, Ui_Itog):
         super().__init__()
         self.setupUi(self)
 
-        self.con = sqlite3.connect('../other_files/Pirgoroy.db')
+        self.con = sqlite3.connect('../other_files/Pirgoroy.db')  # подключаем базу данных
 
         self.show()
         self.update()
 
-        self.exit_button.clicked.connect(self.ex)
+        self.exit_button.clicked.connect(self.ex)  # отслеживаем нажатие кнопки выхода
 
+        # ниже в self.titles записаны названия продуктов, которые используются для приготовления блюда
         self.titles = ["Бананы, гр", "Ветчина, гр", "Горошек зеленый консервированный, уп (200гр)",
                        "Зелень укропа или петрушки, уп (150гр)", "Кабачок, гр", "Капуста белокочанная, гр",
                        "Картофель, гр", "Колбаса копченая, гр", "Крупа гречневая, уп (500гр)",
@@ -31,6 +32,8 @@ class Itog(QMainWindow, Ui_Itog):
                        "Сыр мягкий рассольный, уп (200гр)", "Сыр твердый, гр", "Творог, уп (200гр)", "Яблоки, гр",
                        "Яйцо куриное, уп (10шт)"]
 
+        # ниже в self.ans записаны итоговые продукты с количеством для покупки (эта информация будет храниться в
+        # файле shopping_list.txt
         self.ans = {
             "Бананы, гр": 0,
             "Ветчина, гр": 0,
@@ -74,6 +77,7 @@ class Itog(QMainWindow, Ui_Itog):
             "Яйцо куриное, уп (10шт)": 0,
         }
 
+        # ниже в self.id записаны индексы блюд в таблицах
         self.id = {
             "Яичница с помидорами и сыром": 1,
             "Яичница с помидорами и ветчиной": 2,
@@ -112,12 +116,14 @@ class Itog(QMainWindow, Ui_Itog):
             "Рис отварной с овощами": 35,
             "Тушеные овощи": 36
         }
+        # вызываем функции по-порядку
         self.itog()
         self.setup()
         self.file()
         self.update()
 
     def itog(self):
+        """функция для соотнесения заказа, который хранится в файле order.txt, с продуктами"""
         keys = list(self.id.keys())
         with open('../other_files/id.txt') as file:
             m = int(file.readline())
@@ -149,6 +155,7 @@ class Itog(QMainWindow, Ui_Itog):
                         self.ans[p] += connect[j] * k
 
     def setup(self):
+        """функция для обновлений значений в таблице Itog"""
         cur = self.con.cursor()
         for i in self.ans.keys():
             que = "UPDATE Itog SET\n"
@@ -158,6 +165,7 @@ class Itog(QMainWindow, Ui_Itog):
             self.con.commit()
 
     def file(self):
+        """запись значений списка покупок в файл shopping_list.txt"""
         os.system(r' >../shopping_list.txt')
         with open('../shopping_list.txt', 'w') as file:
             m = ''
@@ -167,6 +175,7 @@ class Itog(QMainWindow, Ui_Itog):
             file.write(m[:-1])
 
     def update(self):
+        """обновление таблицы в форме"""
         cur = self.con.cursor()
         result = cur.execute("SELECT * FROM Itog").fetchall()
         self.tableWidget.setRowCount(len(result))
@@ -177,4 +186,5 @@ class Itog(QMainWindow, Ui_Itog):
                 self.tableWidget.setItem(i, j, QTableWidgetItem(str(val)))
 
     def ex(self):
+        """функция выхода"""
         self.close()

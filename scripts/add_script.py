@@ -8,17 +8,18 @@ class Add(QMainWindow, Ui_Add_database):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        self.con = sqlite3.connect('../other_files/Pirgoroy.db')
+        self.con = sqlite3.connect('../other_files/Pirgoroy.db')  # подключаем базу данных
         self.show()
-
+        # отслеживаем нажатия кнопок
         self.ok_button.clicked.connect(self.ok)
         self.pushButton.clicked.connect(self.ex)
 
     def ok(self):
+        """функция для записи нового элемента, который добавляет пользователь"""
         system = self.lineEdit.text()
         ind = system.index(' ')
         system = [system[:ind], system[ind + 1:]]
-
+        # работаем с файлом id.txt (увеличиваем index, который лежит в файле)
         if len(system) != 0:
             with open('../other_files/id.txt') as file:
                 a = int(file.readline())
@@ -28,7 +29,7 @@ class Add(QMainWindow, Ui_Add_database):
                 file.write(str(a))
 
         cur = self.con.cursor()
-        try:
+        try:  # работаем с таблицами базы данных
             cur.execute("INSERT INTO Menu (id, Type, Name) VALUES (?, ?, ?)", (a, system[0], system[1]))
             cur.execute("INSERT INTO Ordering (id, Name, Choose) VALUES (?, ?, ?)", (a, system[1], 0))
             cur.execute("INSERT INTO Recipy (id, 'Название блюда', 'Бананы, гр', "
@@ -62,5 +63,5 @@ class Add(QMainWindow, Ui_Add_database):
         self.label_2.setText('Готово!')
 
     def ex(self):
+        """функция выхода"""
         self.close()
-
