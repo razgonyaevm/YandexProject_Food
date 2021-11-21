@@ -10,7 +10,7 @@ class Order(QMainWindow, Ui_Make_an_order):
         super().__init__()
         self.setupUi(self)
 
-        self.con = sqlite3.connect('../other_files/Pirgoroy.db')  # подключаем базу данных Pirgoroy
+        self.con = sqlite3.connect('other_files/Pirgoroy.db')  # подключаем базу данных Pirgoroy
 
         # запсь значений в таблицу в форме
         cur = self.con.cursor()
@@ -48,8 +48,8 @@ class Order(QMainWindow, Ui_Make_an_order):
         cur = self.con.cursor()
         result = cur.execute("""SELECT name, choose FROM Ordering
                 WHERE Choose > 0;""").fetchall()
-        os.system(r' >../other_files/order.txt')
-        with open('../other_files/order.txt', 'w') as order:
+        os.system(r' >other_files/order.txt')
+        with open('other_files/order.txt', 'w') as order:
             for i in result:
                 order.write(f'{i[0]} {i[1]}шт\n')
         m = ''

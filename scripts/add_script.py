@@ -8,7 +8,7 @@ class Add(QMainWindow, Ui_Add_database):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        self.con = sqlite3.connect('../other_files/Pirgoroy.db')  # подключаем базу данных
+        self.con = sqlite3.connect('other_files/Pirgoroy.db')  # подключаем базу данных
         self.show()
         # отслеживаем нажатия кнопок
         self.ok_button.clicked.connect(self.ok)
@@ -21,11 +21,11 @@ class Add(QMainWindow, Ui_Add_database):
         system = [system[:ind], system[ind + 1:]]
         # работаем с файлом id.txt (увеличиваем index, который лежит в файле)
         if len(system) != 0:
-            with open('../other_files/id.txt') as file:
+            with open('other_files/id.txt') as file:
                 a = int(file.readline())
                 a += 1
-            os.system(r' >../other_files/id.txt')
-            with open('../other_files/id.txt', 'w') as file:
+            os.system(r' >other_files/id.txt')
+            with open('other_files/id.txt', 'w') as file:
                 file.write(str(a))
 
         cur = self.con.cursor()

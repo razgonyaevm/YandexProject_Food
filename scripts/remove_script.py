@@ -9,7 +9,7 @@ class Remove(QMainWindow, Ui_Remove_database):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        self.con = sqlite3.connect('../other_files/Pirgoroy.db')  #
+        self.con = sqlite3.connect('other_files/Pirgoroy.db')  #
         self.upd()
         self.show()
 
@@ -26,7 +26,7 @@ class Remove(QMainWindow, Ui_Remove_database):
             self, '', "Действительно удалить элементы?",
             QMessageBox.Yes, QMessageBox.No)
         if valid == QMessageBox.Yes:
-            with open('../other_files/id.txt') as file:
+            with open('other_files/id.txt') as file:
                 a = int(file.readline())
                 while True:
                     if str(a) in ids:
@@ -34,9 +34,9 @@ class Remove(QMainWindow, Ui_Remove_database):
                     else:
                         break
 
-            os.system(r' >../other_files/id.txt')
-            os.system(r' >../shopping_list.txt')
-            with open('../other_files/id.txt', 'w') as file:
+            os.system(r' >other_files/id.txt')
+            os.system(r' >shopping_list.txt')
+            with open('other_files/id.txt', 'w') as file:
                 file.write(str(a))
             cur = self.con.cursor()
             cur.execute("DELETE FROM Menu WHERE id IN (" + ", ".join(

@@ -10,7 +10,7 @@ class Itog(QMainWindow, Ui_Itog):
         super().__init__()
         self.setupUi(self)
 
-        self.con = sqlite3.connect('../other_files/Pirgoroy.db')  # подключаем базу данных
+        self.con = sqlite3.connect('other_files/Pirgoroy.db')  # подключаем базу данных
 
         self.show()
         self.update()
@@ -125,7 +125,7 @@ class Itog(QMainWindow, Ui_Itog):
     def itog(self):
         """функция для соотнесения заказа, который хранится в файле order.txt, с продуктами"""
         keys = list(self.id.keys())
-        with open('../other_files/id.txt') as file:
+        with open('other_files/id.txt') as file:
             m = int(file.readline())
             for i in keys[::-1]:
                 if self.id[i] > m:
@@ -134,7 +134,7 @@ class Itog(QMainWindow, Ui_Itog):
                     break
 
         cur = self.con.cursor()
-        with open("../other_files/order.txt") as file:
+        with open("other_files/order.txt") as file:
             a = list(map(lambda x: x.strip(), file.readlines()))
             if len(a) != 0:
                 for i in range(len(a)):
@@ -144,7 +144,7 @@ class Itog(QMainWindow, Ui_Itog):
                     try:
                         s = self.id[s]
                     except KeyError:
-                        with open('../other_files/id.txt') as file:
+                        with open('other_files/id.txt') as file:
                             m = file.readline()
                             self.id[s] = int(m)
                             s = self.id[s]
@@ -166,8 +166,8 @@ class Itog(QMainWindow, Ui_Itog):
 
     def file(self):
         """запись значений списка покупок в файл shopping_list.txt"""
-        os.system(r' >../shopping_list.txt')
-        with open('../shopping_list.txt', 'w') as file:
+        os.system(r' >shopping_list.txt')
+        with open('shopping_list.txt', 'w') as file:
             m = ''
             for i in self.ans.keys():
                 m += f"{i}: {self.ans[i]}\n"

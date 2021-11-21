@@ -39,7 +39,7 @@ class Ui_Itog(object):
         self.exit_button.setStyleSheet("border-radius: 50px;")
         self.exit_button.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../images/exit_icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("images/exit_icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.exit_button.setIcon(icon)
         self.exit_button.setIconSize(QtCore.QSize(70, 70))
         self.exit_button.setObjectName("exit_button")

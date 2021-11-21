@@ -49,8 +49,8 @@ class Hello(QMainWindow, Ui_Hello_Window):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    app.setWindowIcon(QIcon('../images/cake_icon.png'))
+    app.setWindowIcon(QIcon('images/cake_icon.png'))
     ex = Hello()
-    ex.setWindowIcon(QIcon('../images/cake_icon.png'))
+    ex.setWindowIcon(QIcon('images/cake_icon.png'))
     ex.show()
     sys.exit(app.exec_())
