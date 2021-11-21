@@ -178,7 +178,7 @@ class Itog(QMainWindow, Ui_Itog):
     def update(self):
         """обновление таблицы в форме"""
         cur = self.con.cursor()
-        result = cur.execute("SELECT * FROM Itog").fetchall()
+        result = cur.execute("SELECT * FROM Itog WHERE 'Количество' > 0").fetchall()
         self.tableWidget.setRowCount(len(result))
         self.tableWidget.setColumnCount(len(result[0]))
         self.titles = [description[0] for description in cur.description]
