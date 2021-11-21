@@ -170,8 +170,9 @@ class Itog(QMainWindow, Ui_Itog):
         with open('shopping_list.txt', 'w') as file:
             m = ''
             for i in self.ans.keys():
-                m += f"{i}: {self.ans[i]}\n"
-                self.ans[i] = 0
+                if self.ans[i] != 0:
+                    m += f"{i}: {self.ans[i]}\n"
+                    self.ans[i] = 0
             file.write(m[:-1])
 
     def update(self):
